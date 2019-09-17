@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Prestation } from '../models/prestation.model';
-import { of } from 'rxjs';
 
 @Pipe({
   name: 'total'

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PrestationsService } from '../../services/prestations.service';
 import { Prestation } from 'src/app/shared/models/prestation.model';
+import { PrestationsService } from '../../services/prestations.service';
 
 @Component({
   selector: 'app-list-prestations',
