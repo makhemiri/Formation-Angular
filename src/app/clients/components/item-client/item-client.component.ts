@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Client } from 'src/app/shared/models/client.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
+import { Client } from 'src/app/shared/models/client.model';
 
 @Component({
   selector: 'app-item-client',

@@ -1,6 +1,6 @@
 import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
-import { State } from '../enums/state.enum';
 import { StateClient } from '../enums/state-client.enum';
+import { State } from '../enums/state.enum';
 
 @Directive({
   selector: '[appState]'

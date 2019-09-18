@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Client } from 'src/app/shared/models/client.model';
 import { fakeClients } from './fake-clients';
-import { StateClient } from 'src/app/shared/enums/state-client.enum';
 
 @Injectable({
   providedIn: 'root'

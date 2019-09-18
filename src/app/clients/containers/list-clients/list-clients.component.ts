@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Client } from 'src/app/shared/models/client.model';
 import { ClientsService } from '../../services/clients.service';
-import { StateClient } from 'src/app/shared/enums/state-client.enum';
 
 @Component({
   selector: 'app-list-clients',
