@@ -17,6 +17,6 @@ export class ItemClientComponent implements OnInit {
   }
 
   changeState(event) {
-    this.nItem.emit({ item  :  this.item , state: event.target.value });
+    this.nItem.emit({ item: this.item , state: event.target.value });
   }
 }
