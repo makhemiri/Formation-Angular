@@ -1,0 +1,20 @@
+@import 'theme';
+
+#tableau-ligth{
+
+  .state-annule, .state-inactif {
+  background: $color1;
+  }
+
+  .state-option {
+  background: lighten($color1,30);
+  }
+
+  .state-confirme, .state-actif {
+  background: $color2;
+  }
+
+  tbody>* {
+    display: contents;
+  }
+}

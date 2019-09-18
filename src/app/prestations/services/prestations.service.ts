@@ -9,7 +9,6 @@ import { fakePrestations } from './fake-prestatations';
 })
 export class PrestationsService {
   public version$ = new BehaviorSubject(1);
-
   // propriete private collection
   private pCollection: Prestation[] ;
 
@@ -29,9 +28,7 @@ set collection(col: Prestation[]) {
 
   // update item in collection
   public update(item: Prestation , state: State) {
-    console.log('avant =>', item);
     item.state = state;
-    console.log('apres=>', item);
   }
 
   // set item bu id from collection
