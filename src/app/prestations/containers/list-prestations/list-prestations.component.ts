@@ -18,7 +18,6 @@ export class ListPrestationsComponent implements OnInit {
     this.tableHeader = ['Type', 'Client', 'NbJour', 'Tjm Ht', 'Total HT', 'Total TTC', 'State'];
   }
   changeState(obj: {'item': Prestation , 'state': State}) {
-    // console.log('event', obj);
     this.prestationsService.update(obj.item, obj.state);
 
   }
