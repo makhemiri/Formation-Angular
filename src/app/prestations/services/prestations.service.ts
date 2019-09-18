@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { fakePrestations } from './fake-prestatations';
 
@@ -6,6 +8,8 @@ import { fakePrestations } from './fake-prestatations';
   providedIn: 'root'
 })
 export class PrestationsService {
+  public version$ = new BehaviorSubject(1);
+
   // propriete private collection
   private pCollection: Prestation[] ;
 
@@ -24,6 +28,11 @@ set collection(col: Prestation[]) {
   // add item in collection
 
   // update item in collection
+  public update(item: Prestation , state: State) {
+    console.log('avant =>', item);
+    item.state = state;
+    console.log('apres=>', item);
+  }
 
   // set item bu id from collection
 }

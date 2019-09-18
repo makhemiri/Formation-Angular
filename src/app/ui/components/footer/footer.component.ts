@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationsService } from 'src/app/prestations/services/prestations.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  public titre: string ;
+  public version: number ;
+  constructor(private prestationService: PrestationsService) { }
 
   ngOnInit() {
+    this.titre = 'My App';
+    this.prestationService.version$.subscribe((data) => {
+      this.version = data;
+    });
   }
 
 }

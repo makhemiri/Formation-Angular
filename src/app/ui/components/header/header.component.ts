@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestationsService } from 'src/app/prestations/services/prestations.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public titre: string ;
-  constructor() { }
+  public version: number ;
+  constructor(private prestationService: PrestationsService) { }
 
   ngOnInit() {
     this.titre = 'My App';
+    this.prestationService.version$.subscribe((data) => {
+      this.version = data;
+    });
   }
-
+  incrementeVersion() {
+    this.prestationService.version$.next(this.version + 1);
+  }
 }
