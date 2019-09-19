@@ -1,20 +1,26 @@
-@import 'theme';
+@import "theme";
 
-#tableau-ligth{
-
-  .state-annule, .state-inactif {
-  background: $color1;
+#tableau-light {
+  .state-annule,
+  .state-inactif {
+    background: $color1;
   }
 
   .state-option {
-  background: lighten($color1,30);
+    background: lighten($color1, 30);
   }
 
-  .state-confirme, .state-actif {
-  background: $color2;
+  .state-confirme,
+  .state-actif {
+    background: $color2;
   }
 
   tbody>* {
     display: contents;
   }
+}
+
+app-template-a #tableau-light thead {
+  background: $dark-color;
+  color: $light-color;
 }

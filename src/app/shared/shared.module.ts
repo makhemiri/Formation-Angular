@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ButtonComponent } from './components/button/button.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { StateDirective } from './directives/state.directive';
 import { TotalPipe } from './pipes/total.pipe';
@@ -7,10 +9,11 @@ import { TotalPipe } from './pipes/total.pipe';
 
 
 @NgModule({
-  declarations: [TotalPipe, StateDirective, TableauComponent],
-  exports: [TotalPipe, StateDirective, TableauComponent],
+  declarations: [TotalPipe, StateDirective, TableauComponent, ButtonComponent],
+  exports: [TotalPipe, StateDirective, TableauComponent, ButtonComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
