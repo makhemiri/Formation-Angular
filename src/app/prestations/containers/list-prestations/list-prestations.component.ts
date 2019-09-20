@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation.model';
 import { PrestationsService } from '../../services/prestations.service';
-import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-prestations',
@@ -24,7 +24,7 @@ export class ListPrestationsComponent implements OnInit, OnDestroy {
   }
   changeState(obj: { 'item': Prestation, 'state': State }) {
     this.prestationsService.update(obj.item, obj.state).then(() => {
-      obj.item.state = obj.state ;
+      obj.item.state = obj.state;
     });
     // this.prestationsService.update(obj.item, obj.state).subscribe((res) => {
     //   // res = reponse de l'api

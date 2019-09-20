@@ -1,11 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { State } from 'src/app/shared/enums/state.enum';
 import { Prestation } from 'src/app/shared/models/prestation.model';
-import { HttpClient } from '@angular/common/http';
-import { fakePrestations } from './fake-prestatations';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -18,11 +17,11 @@ export class PrestationsService {
   private pCollection: Observable<Prestation[]>;
   private urlApi = environment.urlApi;
 
-  constructor(private afs: AngularFirestore , private http: HttpClient) {
+  constructor(private afs: AngularFirestore, private http: HttpClient) {
     this.itemsCollection = afs.collection<Prestation>('prestations');
     this.collection = this.itemsCollection.valueChanges().pipe(
-     // map(tab => tab.map(obj => new Prestation(obj));  ====>  lambda  expression  ES6
-      map( (tab) => {
+      // map(tab => tab.map(obj => new Prestation(obj));  ====>  lambda  expression  ES6
+      map((tab) => {
         return tab.map((obj) => {
           return new Prestation(obj);
         });
@@ -64,7 +63,7 @@ export class PrestationsService {
   }
 
   update(item: Prestation, state?: State): Promise<any> {
-    const presta  = {...item};
+    const presta = { ...item };
     if (state) {
       presta.state = state;
     }

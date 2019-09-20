@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { Client } from 'src/app/shared/models/client.model';
 import { ClientsService } from '../../services/clients.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-clients',
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ListClientsComponent implements OnInit {
   public collection$: Observable<Client[]>;
-  public tableHeader: string[] ;
+  public tableHeader: string[];
   constructor(private clientsService: ClientsService) { }
 
   ngOnInit() {
@@ -19,10 +19,10 @@ export class ListClientsComponent implements OnInit {
     this.tableHeader = ['Client', 'Email', 'State'];
   }
 
-  changeState(obj: {'item': Client , 'state': StateClient}) {
+  changeState(obj: { 'item': Client, 'state': StateClient }) {
     // console.log('event', obj);
     this.clientsService.update(obj.item, obj.state).then(() => {
-      obj.item.state = obj.state ;
+      obj.item.state = obj.state;
     });
 
   }

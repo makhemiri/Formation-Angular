@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PrestationsService } from '../../services/prestations.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-prestation',
@@ -16,7 +16,7 @@ export class AddPrestationComponent implements OnInit {
   onSubmit(obj) {
     this.prestationsService.add(obj.item).then(() => {
       // this.router.navigate(['/prestations']);
-      this.router.navigate(['../'], {relativeTo :  this.route});
+      this.router.navigate(['../'], { relativeTo: this.route });
     });
 
     // this.prestationsService.add(obj.item).subscribe((data) => { // >> pour l'appel http
